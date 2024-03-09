@@ -661,7 +661,7 @@ class Product(val name: String, val price : Double){
         println("Name of product : ${name}  and it's prce is ${price}")
     }
 }
-class ShoppingCart(){
+class ShoppingCart1(){
     private val items = mutableListOf<Product>()
     fun addItems(product : Product){
         items.add(product)
@@ -676,7 +676,7 @@ fun main(){
     val product1 = Product("notebook",100.00)
     val product2 = Product("tableCloth",1060.00)
 
-    val `shopping-cart` = ShoppingCart()
+    val `shopping-cart` = ShoppingCart1()
 
     `shopping-cart`.addItems(product1)
     `shopping-cart`.addItems(product2)
