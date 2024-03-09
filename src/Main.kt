@@ -571,27 +571,119 @@
 //}
 
 
-class User(name: String, age: Int) {
-    val name: String
-    val age: Int
+//class User(name: String, age: Int) {
+//    val name: String
+//    val age: Int
+//
+//    init {
+//        require(age >= 0) { "Age cannot be negative" } // Validation check
+//        this.name = name
+//        this.age = age
+//        println("User initialized: $name, $age years old")
+//        println("this is git example")
+//    }
+//}
+//fun main() {
+//    User("git", 30) // Creating a user object triggers the initialization block
+//    User("Bob", -5) // This will throw an IllegalArgumentException due to negative age
+//
+//}
 
-    init {
-        require(age >= 0) { "Age cannot be negative" } // Validation check
-        this.name = name
-        this.age = age
-        println("User initialized: $name, $age years old")
-        println("this is git example")
+
+//Init KEYWORD
+// class Person(var name: String){
+//     var age : Int = 10
+//    init{
+//        println("${name} and he is ${age} years old")
+//    }
+// }
+//fun main(){
+//    Person("senthur")
+//}
+
+//init CONTINUE
+//class Person(name : String, birthYear : Int){
+//    var name : String = ""
+//    var age : Int = 0
+//    var birthYear : Int = 0
+//    init {
+//        if (birthYear <= 1900) {"invalid year"}
+//        this.birthYear = birthYear
+//        this.name = name
+//        calculateAge()
+//        println("$name is $age years old")
+//    }
+//    private fun calculateAge(){
+//        val currentYear : Int = 2024
+//        age = currentYear - birthYear
+//    }
+//    fun celebrate(){
+//        age++
+//        println("$name celebrates the birthday and now he's $age")
+//    }
+//}
+//fun main(){
+//    println("Enter your name : ")
+//    var userNmae = readLine()?.toString()
+//    println("Enterr your birthyear :")
+//    var userBirthyear = readLine()?.toInt()
+//    var person = Person(userNmae ?: "", userBirthyear ?: 0)
+//    person.celebrate()
+//}
+
+
+//// Primary constructor defined in the class header
+//class Person(val name: String, val age: Int) {
+//
+//    // Secondary constructor defined inside the class body
+//    constructor(name: String) : this(name, 0) {
+//        // Secondary constructor body
+//        println("Secondary constructor called")
+//    }
+//
+//    // Function to print person details
+//    fun printDetails() {
+//        println("Name: $name, Age: $age")
+//    }
+//}
+//
+//fun main() {
+//    // Creating objects using primary and secondary constructors
+//    val person1 = Person("Alice", 30)
+//    val person2 = Person("Bob")
+//
+//    // Printing details of both persons
+//    person1.printDetails()
+//    person2.printDetails()
+//}
+class Product(val name: String, val price : Double){
+    fun displayDetails(){
+        println("Name of product : ${name}  and it's prce is ${price}")
     }
-
-
+}
+class ShoppingCart(){
+    private val items = mutableListOf<Product>()
+    fun addItems(product : Product){
+        items.add(product)
+    }
+    fun displayCart(){
+        println("Cart : ")
+        items.forEach{ it.displayDetails()}
+    }
 }
 
-fun main() {
-    User("git", 30) // Creating a user object triggers the initialization block
-    User("Bob", -5) // This will throw an IllegalArgumentException due to negative age
+fun main(){
+    val product1 = Product("notebook",100.00)
+    val product2 = Product("tableCloth",1060.00)
+
+    val `shopping-cart` = ShoppingCart()
+
+    `shopping-cart`.addItems(product1)
+    `shopping-cart`.addItems(product2)
+
+    `shopping-cart`.displayCart()
 
 }
-
 
 
 
