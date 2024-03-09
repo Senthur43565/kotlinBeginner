@@ -412,7 +412,7 @@ import java.lang.ArithmeticException
 
 
 
-class NetworkException(message : String) : Exception(message)
+//class NetworkException(message : String) : Exception(message)
 
 //fetchDataFromRemoteServer
 //processResult
@@ -580,13 +580,19 @@ class User(name: String, age: Int) {
         this.name = name
         this.age = age
         println("User initialized: $name, $age years old")
+        println("this is git example")
     }
+
+
 }
 
 fun main() {
-    val user1 = User("Alice", 30) // Creating a user object triggers the initialization block
-    val user2 = User("Bob", -5) // This will throw an IllegalArgumentException due to negative age
+    User("git", 30) // Creating a user object triggers the initialization block
+    User("Bob", -5) // This will throw an IllegalArgumentException due to negative age
+
 }
+
+
 
 
 
