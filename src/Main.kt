@@ -656,44 +656,101 @@
 //    person1.printDetails()
 //    person2.printDetails()
 //}
-class Product(val name: String, val price : Double){
-    fun displayDetails(){
-        println("Name of product : ${name}  and it's prce is ${price}")
+//class Product(val name: String, val price : Double){
+//    fun displayDetails(){
+//        println("Name of product : ${name}  and it's prce is ${price}")
+//    }
+//}
+//class ShoppingCart1(){
+//    private val items = mutableListOf<Product>()
+//    fun addItems(product : Product){
+//        items.add(product)
+//    }
+//    fun displayCart(){
+//        println("Cart : ")
+//        items.forEach{ it.displayDetails()}
+//    }
+//}
+//
+//fun main(){
+//    val product1 = Product("notebook",100.00)
+//    val product2 = Product("tableCloth",1060.00)
+//
+//    val `shopping-cart` = ShoppingCart1()
+//
+//    `shopping-cart`.addItems(product1)
+//    `shopping-cart`.addItems(product2)
+//
+//    `shopping-cart`.displayCart()
+//
+//}
+
+//class Employee(val name: String, val age: Int, val department: String, val salary: Float)
+//
+//fun main() {
+//    // Instantiate three instances of the Employee class
+//    val employee1 = Employee("John", 30, "Engineering", 5000f)
+//    val employee2 = Employee("Alice", 35, "Marketing", 6000f)
+//    val employee3 = Employee("Mike", 28, "Finance", 5500f)
+//
+//    // Calculate the average salary of the employees
+//    val averageSalary = (employee1.salary + employee2.salary + employee3.salary) / 3
+//    println("Average Salary: $averageSalary")
+//
+//    // Find the oldest employee
+//    val oldestEmployee = listOf(employee1, employee2, employee3).maxByOrNull { it.age }
+//    if (oldestEmployee != null){
+//        println("Oldest Employee: ${oldestEmployee.name}, Age: ${oldestEmployee.age}")
+//
+//    }
+//
+//    // Print the total number of employees
+//    println("Total number of employees: ${numberOfEmployees(employee1, employee2, employee3)}")
+//}
+//
+//fun numberOfEmployees(vararg employees: Employee): Int {
+//    return employees.size
+//}
+
+
+
+class Temperature {
+    var celsius: Double = 0.0
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    var fahrenheit: Double
+        get() = celsius * 9 / 5 + 32
+        set(value) {
+            celsius = (value - 32) * 5 / 9
+        }
+}
+
+fun main() {
+    val temperature = Temperature()
+
+    println("Enter temperature in Celsius: ")
+    val userCelsius = readLine()?.toDoubleOrNull()
+    if (userCelsius != null) {
+        temperature.celsius = userCelsius
+        println("Temperature in Celsius: ${temperature.celsius}")
+        println("Temperature in Fahrenheit: ${temperature.fahrenheit}")
+    } else {
+        println("Invalid input for Celsius temperature.")
+    }
+
+    println("Enter temperature in Fahrenheit: ")
+    val userFahrenheit = readLine()?.toDoubleOrNull()
+    if (userFahrenheit != null) {
+        temperature.fahrenheit = userFahrenheit
+        println("Temperature in Fahrenheit: ${temperature.fahrenheit}")
+        println("Temperature in Celsius: ${temperature.celsius}")
+    } else {
+        println("Invalid input for Fahrenheit temperature.")
     }
 }
-class ShoppingCart1(){
-    private val items = mutableListOf<Product>()
-    fun addItems(product : Product){
-        items.add(product)
-    }
-    fun displayCart(){
-        println("Cart : ")
-        items.forEach{ it.displayDetails()}
-    }
-}
-
-fun main(){
-    val product1 = Product("notebook",100.00)
-    val product2 = Product("tableCloth",1060.00)
-
-    val `shopping-cart` = ShoppingCart1()
-
-    `shopping-cart`.addItems(product1)
-    `shopping-cart`.addItems(product2)
-
-    `shopping-cart`.displayCart()
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
